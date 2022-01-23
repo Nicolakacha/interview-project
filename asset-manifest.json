@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/interview-project/6_custom_hook/static/css/main.d33dd536.css",
-    "main.js": "/interview-project/6_custom_hook/static/js/main.60b808db.js",
-    "static/media/background.jpg": "/interview-project/6_custom_hook/static/media/background.324e91fd7338876b2ec1.jpg",
-    "index.html": "/interview-project/6_custom_hook/index.html",
-    "main.d33dd536.css.map": "/interview-project/6_custom_hook/static/css/main.d33dd536.css.map",
-    "main.60b808db.js.map": "/interview-project/6_custom_hook/static/js/main.60b808db.js.map"
+    "main.css": "/interview-project/static/css/main.d33dd536.css",
+    "main.js": "/interview-project/static/js/main.e132db50.js",
+    "static/media/background.jpg": "/interview-project/static/media/background.324e91fd7338876b2ec1.jpg",
+    "index.html": "/interview-project/index.html",
+    "main.d33dd536.css.map": "/interview-project/static/css/main.d33dd536.css.map",
+    "main.e132db50.js.map": "/interview-project/static/js/main.e132db50.js.map"
   },
   "entrypoints": [
     "static/css/main.d33dd536.css",
-    "static/js/main.60b808db.js"
+    "static/js/main.e132db50.js"
   ]
 }
