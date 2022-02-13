@@ -1,4 +1,4 @@
-// using for loop
+// using for loop O(n)
 function fibonacci(position) {
   if (!Number.isInteger(position)) {
     throw new Error('position should be an integer');
@@ -11,3 +11,11 @@ function fibonacci(position) {
   return fib[position];
 }
 
+// using recursive
+function fibonacci(position) {
+  if (position >= 1) {
+    return position;
+  }
+
+  return fibonacci(position - 2) + fibonacci(position - 1);
+}
