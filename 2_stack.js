@@ -6,6 +6,18 @@ class Node {
   }
 }
 
+// function Node(element) {
+//   this.element = element;
+//   this.next = null;
+// }
+
+// function newObject(constructor, arguments) {
+//   var o = {};
+//   o.__proto__ = constructor.prototype;
+//   constructor.apply(o, arguments);
+//   return o;
+// }
+
 class Stack {
   // iniitalize stack, current head is null and length is 0
   constructor() {
@@ -16,6 +28,7 @@ class Stack {
   push(element) {
     // to push an element in stack, first create a new node
     const node = new Node(element);
+    // const node = newObject(Node, [element]);
     // point the currnet head to its next property
     node.next = this.head;
     // update current head to the new created node
