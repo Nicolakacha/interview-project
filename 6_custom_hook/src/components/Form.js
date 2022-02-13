@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import useForm from '../hooks/useForm';
 import { MEDIA_QUERY_MD } from '../styles/breakpoint';
+import TextInput from './TextInput';
+import CheckboxInput from './CheckboxInput';
+
 const Container = styled.div`
   padding-top: 80px;
 `;
@@ -18,6 +21,7 @@ const FormWrapper = styled.div`
   border: 2px solid #d9dce0;
   border-radius: 5px;
   padding: 40px 60px;
+  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.85);
   ${MEDIA_QUERY_MD} {
     max-width: 400px;
@@ -34,44 +38,6 @@ const FormHeader = styled.div`
   h2 {
     font-size: 20px;
     font-weight: 400;
-  }
-`;
-
-const TextInput = styled.input`
-  box-sizing: border-box;
-  margin: 10px;
-  border-radius: 5px;
-  padding: 10px;
-  width: 100%;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  &:focus {
-    border: 3px solid #1a73e8;
-  }
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus,
-  &:-webkit-autofill:active {
-    color: #fff !important;
-
-    font-size: 18px;
-  }
-
-  ${MEDIA_QUERY_MD} {
-    padding: 20px;
-    font-size: 12px;
-    font-size: 18px;
-  }
-`;
-
-const CheckBoxInput = styled.label`
-  cursor: pointer;
-  &:hover {
-    color: #1a73e8;
-  }
-  input {
-    transform: scale(1.5);
-    margin-right: 10px;
   }
 `;
 
@@ -92,12 +58,6 @@ const FormButton = styled.button`
     font-size: 18px;
     padding: 10px 40px;
   }
-`;
-
-const ErrorMessage = styled.div`
-  width: 100%;
-  text-align: left;
-  color: rgba(255, 0, 0, 0.85);
 `;
 
 function Form() {
@@ -130,37 +90,28 @@ function Form() {
 
         <TextInput
           name='account'
-          onChange={handleChange}
-          onFocus={handleFocus}
+          handleChange={handleChange}
+          handleFocus={handleFocus}
           value={values.account}
-          placeholder='Account'
-          autoFocus
+          error={errors.account}
+          isAutoFocus={true}
         />
-        {errors.account && (
-          <ErrorMessage>{errors.account}</ErrorMessage>
-        )}
 
         <TextInput
           name='password'
           type='password'
-          onChange={handleChange}
-          onFocus={handleFocus}
+          handleChange={handleChange}
+          handleFocus={handleFocus}
           value={values.password}
-          placeholder='Password'
+          error={errors.password}
         />
-        {errors.password && (
-          <ErrorMessage>{errors.password}</ErrorMessage>
-        )}
 
-        <CheckBoxInput>
-          <input
-            type='checkbox'
-            name='rememberMe'
-            onChange={handleChange}
-            checked={values.rememberMe}
-          />
-          Remember Me
-        </CheckBoxInput>
+        <CheckboxInput
+          name='rememberMe'
+          text='Remeber Me'
+          handleChange={handleChange}
+          isChecked={values.rememberMe}
+        />
 
         <FormButton onClick={handleSubmit}>Login</FormButton>
       </FormWrapper>
